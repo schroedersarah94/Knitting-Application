@@ -1,20 +1,28 @@
 import React from 'react';
-import { Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import sweaterImage from '../../assets/img/sweater.jpg';
+import PropTypes from 'prop-types';
 
-function PatternIcon() {
+export default function PatternIcon(props) {
+  const { name, id, author } = props;
   return (
-    <div data-testid="patternContainer">
-      <Router basename="/">
-        <Link to="/pattern-details">
-          Pattern Link
-        </Link>
-      </Router>
-      <div data-testid="patternTitle">Pattern Title</div>
-      <div data-testid="patternAuthor">Author</div>
-      <img data-testid="patternImage" src={sweaterImage} alt="main pattern" />
-    </div>
+    <Link to={{ pathname: "/pattern-details"}}>
+      <div data-testid="patternContainer" class={id}>      
+        <div data-testid="patternTitle">{name}</div>
+        <div data-testid="patternAuthor">{author}</div>
+        <img data-testid="patternImage" src={sweaterImage} alt="main pattern" />
+      </div>
+    </Link>
   );
 }
 
-export default PatternIcon;
+PatternIcon.propTypes = {
+  name: PropTypes.string,
+  id: PropTypes.number.isRequired,
+  author: PropTypes.string,
+}
+
+PatternIcon.defaultProps = {
+  name: '',
+  author: '',
+}

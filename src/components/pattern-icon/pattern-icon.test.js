@@ -5,26 +5,32 @@ import PatternIcon from './pattern-icon.component';
 
 describe('pattern icon test suite', () => {
   it('renders pattern container element', () => {
-    render(<PatternIcon />);
+    render(<PatternIcon id={"111222"} />);
     const patternContainer = screen.getByTestId('patternContainer');
     expect(patternContainer).toBeInTheDocument();
   });
 
   it('should render with pattern title', () => {
-    render(<PatternIcon />);
+    render(<PatternIcon id={"111222"} />);
     const patternTitle = screen.getByTestId('patternTitle');
     expect(patternTitle).toBeInTheDocument();
   });
 
   it('should render with pattern author', () => {
-    render(<PatternIcon />);
+    render(<PatternIcon id={"111222"} />);
     const patternAuthor = screen.getByTestId('patternAuthor');
     expect(patternAuthor).toBeInTheDocument();
   });
 
   it('should render with pattern main image', () => {
-    render(<PatternIcon />);
+    render(<PatternIcon id={"111222"} />);
     const patternImage = screen.getByTestId('patternImage');
     expect(patternImage).toBeInTheDocument();
+  });
+
+  it('should render with given author, id, and name', () => {
+    render(<PatternIcon name={"TestName"} id={"111222"} author={"Gingersnap"} />);
+    const patternName = screen.queryByText("TestName");
+    expect(patternName).toBeInTheDocument();
   });
 });
