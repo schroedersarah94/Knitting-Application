@@ -1,0 +1,20 @@
+.header-container {
+    height: 70px;
+    background-color: #FB9A4B;
+    display: flex;
+    color: #FFF0E2;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.header-logo {
+    margin: auto;
+}
+
+.header-user-icon {
+    position: fixed;
+    right: 15px;
+    top: 20px;
+    height: 30px;
+}

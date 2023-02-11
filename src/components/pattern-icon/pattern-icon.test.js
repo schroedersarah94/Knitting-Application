@@ -11,19 +11,19 @@ describe('pattern icon test suite', () => {
   });
 
   it('should render with pattern title', () => {
-    render(<PatternIcon />);
+    render(<PatternIcon patternName="Rainbow Winter Scarf" />);
     const patternTitle = screen.getByTestId('patternTitle');
-    expect(patternTitle).toBeInTheDocument();
+    expect(patternTitle.innerHTML).toBe('Rainbow Winter Scarf');
   });
 
   it('should render with pattern author', () => {
-    render(<PatternIcon />);
+    render(<PatternIcon patternAuthor="Hannah Rolambaj" />);
     const patternAuthor = screen.getByTestId('patternAuthor');
-    expect(patternAuthor).toBeInTheDocument();
+    expect(patternAuthor.innerHTML).toBe('Hannah Rolambaj');
   });
 
   it('should render with pattern main image', () => {
-    render(<PatternIcon />);
+    render(<PatternIcon patternImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaTaR6kJMutknBAQLwQ4hzMd4hWt2X5YiOkw&usqp=CAU" />);
     const patternImage = screen.getByTestId('patternImage');
     expect(patternImage).toBeInTheDocument();
   });

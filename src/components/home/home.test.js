@@ -6,3 +6,11 @@ test('renders learn react link', () => {
   const linkElement = screen.getByTestId('homeContainer');
   expect(linkElement).toBeInTheDocument();
 });
+
+test('', () => {
+  // given
+
+  // when
+
+  // then
+});
