@@ -5,7 +5,7 @@ import PatternIcon from './pattern-icon.component';
 
 describe('pattern icon test suite', () => {
   it('renders pattern container element', () => {
-    render(<PatternIcon />);
+    render(<PatternIcon id="111222" />);
     const patternContainer = screen.getByTestId('patternContainer');
     expect(patternContainer).toBeInTheDocument();
   });
@@ -26,5 +26,11 @@ describe('pattern icon test suite', () => {
     render(<PatternIcon patternImage="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaTaR6kJMutknBAQLwQ4hzMd4hWt2X5YiOkw&usqp=CAU" />);
     const patternImage = screen.getByTestId('patternImage');
     expect(patternImage).toBeInTheDocument();
+  });
+
+  it('should render with given author, id, and name', () => {
+    render(<PatternIcon name="TestName" id="111222" author="Gingersnap" />);
+    const patternName = screen.queryByText('TestName');
+    expect(patternName).toBeInTheDocument();
   });
 });
